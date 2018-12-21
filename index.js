@@ -19,15 +19,16 @@ function addToCart(item) {
 function viewCart() {
   // write your code here
   var report = "In your cart, you have "
-  case cart === 1:
+  switch (cart) {
+  case 1:
   report = report + `${cart[0].itemName} at ${cart[0].itemPrice}.`
     return report
     break;
-  case cart === 2:
+  case 2:
 
   return report
   break;
-  case cart > 2:
+  case > 2:
   for (var i = 0; i < cart.length - 1; i++) {
     report += `${cart[i].itemName} at ${cart[i].itemPrice},`
   }
