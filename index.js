@@ -18,25 +18,11 @@ function addToCart(item) {
 
 function viewCart() {
   // write your code here
-  var report = "In your cart, you have "
-  switch (cart) {
-  case 1:
-  report = report + `${cart[0].itemName} at ${cart[0].itemPrice}.`
-    return report
-    break;
-  case 2:
-
-  return report
-  break;
-  case 3:
-  for (var i = 0; i < cart.length - 1; i++) {
-    report += `${cart[i].itemName} at ${cart[i].itemPrice},`
-  }
-  report += `and ${cart[cart.length - 1].itemName} at ${cart[cart.length - 1].itemPrice}.`
-  return report
-  break;
-  default:
-  return "Your shopping cart is empty."
+  if (getCart().length < 1) {
+       return "Your shopping cart is empty."
+   } else {
+       return printCart(getCart())
+   }
 }
 
 function total() {
@@ -50,3 +36,16 @@ function removeFromCart(item) {
 function placeOrder(cardNumber) {
   // write your code here
 }
+
+function printCart(cart) {
+       if (cart.length < 2){
+           return `In your cart, you have ${cart[0].itemName} at $${cart[0].itemPrice}.`
+       } else {
+           var str = "In your cart, you have"
+           for(let i = 0; i < cart.length - 1; i++){
+               str += ` ${cart[i].itemName} at $${cart[i].itemPrice},`
+           }
+           str += ` and ${cart[cart.length - 1].itemName} at $${cart[cart.length - 1].itemPrice}.`
+           return str
+       }
+   }
