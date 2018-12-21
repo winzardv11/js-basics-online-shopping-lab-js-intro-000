@@ -28,7 +28,7 @@ function viewCart() {
 
   return report
   break;
-  case > 2:
+  case 3:
   for (var i = 0; i < cart.length - 1; i++) {
     report += `${cart[i].itemName} at ${cart[i].itemPrice},`
   }
